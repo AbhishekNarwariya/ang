@@ -1,0 +1,18 @@
+<p>templateform works!</p>
+<div>
+    
+<form #refVar="ngForm" (ngSubmit)="Register(refVar.value)">
+    <div>
+        <input type="text" placeholder="enter firstname" name="fname" ngModel>
+    </div>
+    <div>
+        <input type="text" placeholder="enter lastname" name="lname" ngModel>
+    </div>
+    <div>
+        <input type="text" placeholder="enter email" name="email" ngModel>
+    </div>
+    <div>
+        <input type="submit"  name="register">
+    </div>
+</form>
+</div>
