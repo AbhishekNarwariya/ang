@@ -1,6 +1,6 @@
 import { Component, HostListener} from '@angular/core';
 import { subscribe } from 'diagnostics_channel';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class AppComponent {
   title = 'ang';
 
   ngOnInit(){
-    const mysub = new BehaviorSubject(4)
+    const mysub = new ReplaySubject(4)
 
     mysub.next(2)
 
@@ -22,12 +22,17 @@ export class AppComponent {
 
     mysub.next(6)
 
+    mysub.next(1)
+    mysub.next(12)
+    mysub.next(11113)
+
     let s = mysub.subscribe(res=>{
       return console.log(res)  // yahan ek value print hoga default
     })
 
     mysub.next(4) // yahan print hoga kyunki after subscribe print hoga
-
+    mysub.next(6)
+    mysub.next(9)
     s.unsubscribe()
 
     mysub.next(45)  // print nahin hoga kyunki unsubscribe kar diya
