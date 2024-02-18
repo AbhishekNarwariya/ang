@@ -1,7 +1,6 @@
-import { Component, HostListener} from '@angular/core';
-import { subscribe } from 'diagnostics_channel';
-import { BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
-import { MsgService } from './msg.service';
+import { Component} from '@angular/core';
+import { Book } from './book';
+import { BookService } from './book.service';
 
 
 @Component({
@@ -13,26 +12,21 @@ import { MsgService } from './msg.service';
 export class AppComponent {
   title = 'ang';
 
-  student:string
+  AllBooks:Book[]=[];
 
-
-  constructor(private msgservice:MsgService){
-    
+  constructor(private _bookService:BookService){
 
   }
-
   ngOnInit(){
-    this.msgservice.name.subscribe(res=>{
-      this.student =res
-    })
-
-   
+    this.getmyAllBooks()
+    
   }
 
+  getmyAllBooks(){
+    this._bookService.getAllBooks().subscribe(res=>
+      this.AllBooks=res
+  )}
+
+
+
   }
-  
- 
-
-
-
-
