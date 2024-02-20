@@ -1,6 +1,4 @@
 import { Component} from '@angular/core';
-import { Book } from './book';
-import { BookService } from './book.service';
 
 
 @Component({
@@ -12,21 +10,16 @@ import { BookService } from './book.service';
 export class AppComponent {
   title = 'ang';
 
-  AllBooks:Book[]=[];
+ 
 
-  constructor(private _bookService:BookService){
+  constructor(){
 
   }
   ngOnInit(){
-    this.getmyAllBooks()
-    
+   
   }
 
-  getmyAllBooks(){
-    this._bookService.getAllBooks().subscribe(res=>
-      this.AllBooks=res
-  )}
-
+ 
 
 
   }
