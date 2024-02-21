@@ -17,8 +17,5 @@ import { CompanyListComponent } from './company-list/company-list.component';
   ]
 })
 export class CompanyModule { 
-  constructor(){
-    console.log("company called");
-    
-  }
+  
 }
