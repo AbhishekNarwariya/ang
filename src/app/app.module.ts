@@ -2,21 +2,20 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ParentComponent } from './parent/parent.component';
-import { ChildComponent } from './child/child.component';
-import { FormsModule } from '@angular/forms';
-
+import { HomeComponent } from './home/home.component';
+import { CompanyModule } from './company/company.module';
+import { PersonModule } from './person/person.module';
 @NgModule({
   declarations: [
     AppComponent,
-    ParentComponent,
-    ChildComponent,
+    HomeComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    CompanyModule,
+    PersonModule
     
   ],
   providers: [
@@ -25,4 +24,9 @@ import { FormsModule } from '@angular/forms';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(){
+    console.log("root called");
+    
+  }
+ }

@@ -11,23 +11,11 @@ import { NgForm } from '@angular/forms';
 export class AppComponent {
   title = 'ang';
 
-
- 
-
- 
-
   constructor(){
 
   }
   ngOnInit(){
    
   }
-  sendData(data:any){
-    console.log(data);
-    
-  }
-
- 
-
 
   }
