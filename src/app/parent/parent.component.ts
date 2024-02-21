@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class ParentComponent {
 
+  ParentData:any
+  sendData(pData:any){
+
+
+  }
+
 }

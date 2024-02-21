@@ -1,4 +1,5 @@
 import { Component} from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -10,6 +11,9 @@ import { Component} from '@angular/core';
 export class AppComponent {
   title = 'ang';
 
+
+ 
+
  
 
   constructor(){
@@ -17,6 +21,10 @@ export class AppComponent {
   }
   ngOnInit(){
    
+  }
+  sendData(data:any){
+    console.log(data);
+    
   }
 
  
