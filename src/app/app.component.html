@@ -1,4 +1,23 @@
 <div>
-    <app-sender></app-sender>
-    <app-receiver></app-receiver>
-  </div>
+  <h1>Welcome to sahosoft</h1>
+  <ul>
+      <li *ngFor="let book of AllBooks">
+          ID: {{book.id}} | Name: {{book.name}} | Category: {{book.category}} Year : {{book.year}}
+
+      </li>
+  </ul>
+
+
+  <h1>async pipe</h1>
+
+  <ul>
+    <li *ngFor="let book of AllBooks$ | async">
+        ID: {{book.id}} | Name: {{book.name}} | Category: {{book.category}} Year : {{book.year}}
+
+    </li>
+</ul>
+
+</div>
+
+
+

@@ -1,4 +1,7 @@
 import { Component} from '@angular/core';
+import { Book } from './book';
+import { BookService } from './book.service';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -10,12 +13,26 @@ import { Component} from '@angular/core';
 export class AppComponent {
   title = 'ang';
 
+  AllBooks:Book[]=[];
 
-  constructor(){
+  AllBooks$:Observable<Book[]>;
 
+
+  constructor(private _bookService:BookService){
   }
+
   ngOnInit(){
+    this.getmyAllBooks()
    
   }
+  getmyAllBooks(){
+    this._bookService.getAllBooks().subscribe(res=>{
+      this.AllBooks=res
+    })
 
+    this.AllBooks$ = this._bookService.getAllBooks()
+  
+  }
+
+  
   }
