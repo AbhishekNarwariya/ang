@@ -1,23 +1,10 @@
 <div>
-  <h1>Welcome to sahosoft</h1>
+    <input [(ngModel)]="newTask" placeholder="Add a new task" />
+    <button (click)="addTask()">Add</button>
+  </div>
+  
   <ul>
-      <li *ngFor="let book of AllBooks">
-          ID: {{book.id}} | Name: {{book.name}} | Category: {{book.category}} Year : {{book.year}}
-
-      </li>
-  </ul>
-
-
-  <h1>async pipe</h1>
-
-  <ul>
-    <li *ngFor="let book of AllBooks$ | async">
-        ID: {{book.id}} | Name: {{book.name}} | Category: {{book.category}} Year : {{book.year}}
-
+    <li *ngFor="let task of getTasks()">
+      {{ task.name }}
     </li>
-</ul>
-
-</div>
-
-
-
+  </ul>

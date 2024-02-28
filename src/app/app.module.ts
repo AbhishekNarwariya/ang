@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { Testdata } from './testdata';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+import {MatListModule} from '@angular/material/list';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,8 +15,11 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    InMemoryWebApiModule.forRoot(Testdata)
+    MatListModule,
+    FormsModule
+    // BrowserAnimationsModule,
+
+    
     
    
     
