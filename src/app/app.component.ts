@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { TodoService } from './todo.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 
@@ -14,22 +14,23 @@ import { TodoService } from './todo.service';
 export class AppComponent {
   title = 'ang';
 
-  
-  newTask: string = '';
-
-  constructor(private todoService: TodoService) {}
-
-  addTask() {
-    if (this.newTask.trim() !== '') {
-      this.todoService.addTask(this.newTask);
-      this.newTask = '';
-    }
-  }
-
-  getTasks() {
-    return this.todoService.getTasks();
-  }
  
+  myForm: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) {}
+
+  ngOnInit() {
+    this.myForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      age: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+  }
+
+  formData() {
+    // Process form data here
+    console.log(this.myForm.value);
+  }
 
   
   }

@@ -2,10 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-
-import {MatListModule} from '@angular/material/list';
-import { FormsModule } from '@angular/forms';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,9 +13,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatListModule,
-    FormsModule
-    // BrowserAnimationsModule,
+    ReactiveFormsModule
 
     
     
@@ -26,6 +22,7 @@ import { FormsModule } from '@angular/forms';
   ],
   providers: [
     provideClientHydration(),
+    provideAnimationsAsync(),
 
   ],
   bootstrap: [AppComponent]
