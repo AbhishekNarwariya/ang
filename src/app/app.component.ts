@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { LogoService } from './logo.service';
 
 
 
@@ -14,23 +15,34 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AppComponent {
   title = 'ang';
 
- 
-  myForm: FormGroup;
+  logos: any[] = [];
 
-  constructor(private formBuilder: FormBuilder) {}
+  isSuccess:true
 
-  ngOnInit() {
-    this.myForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      age: ['', Validators.required],
-      password: ['', Validators.required]
-    });
+
+
+  constructor(private logoservice:LogoService){}
+
+  filterLogosByDate(date: string): void {
+    this.logos = this.logos.filter((logo) => logo.createdOn === date);
   }
 
-  formData() {
-    // Process form data here
-    console.log(this.myForm.value);
+  ngOnInit(){
+    this.logoservice.getLogos().subscribe((res:any)=>{
+      if(res.isSuccess){
+        this.logos = res.data
+
+        this.filterLogosByDate('07/12/2019');
+      }
+      else {
+        console.error('Error loading logos:', res.errors);
+      }
+    })
+
+  }
   }
 
   
-  }
+
+
+  
