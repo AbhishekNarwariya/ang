@@ -1,0 +1,38 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe"
+    },
+    {
+      "id": "2",
+      "name": "Jane Doe"
+    },
+    {
+      "id": "6207",
+      "name": "abhishek"
+    },
+    {
+      "id": "0674",
+      "name": "get"
+    },
+    {
+      "id": "b3b3",
+      "name": "apna"
+    },
+    {
+      "id": "7d86",
+      "name": "kuldeep"
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "title": "Lorem Ipsum"
+    },
+    {
+      "id": "2",
+      "title": "Dolor Sit Amet"
+    }
+  ]
+}

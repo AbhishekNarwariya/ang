@@ -1,7 +1,12 @@
-<div *ngFor="let logo of logos">
-  <h2>{{ logo.name }}</h2>
-  <img [src]="logo.imagePath" alt="{{ logo.name }}" />
-  <p>Status: {{ logo.status }}</p>
-  <p>Created On: {{ logo.createdOn }}</p>
-  <p>Modified On: {{ logo.modifiedOn }}</p>
-</div>
+<mat-form-field>
+  <input matInput placeholder="Task" [(ngModel)]="newTask">
+</mat-form-field>
+
+<button mat-raised-button color="primary" (click)="addTask()">Add Task</button>
+
+<mat-list>
+  <mat-list-item *ngFor="let task of tasks">
+    <mat-checkbox></mat-checkbox>
+    {{ task }}
+  </mat-list-item>
+</mat-list>
