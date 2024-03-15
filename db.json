@@ -1,38 +1,16 @@
 {
-  "users": [
+  "seller": [
     {
-      "id": "1",
-      "name": "John Doe"
+      "name": "abhishek",
+      "email": "abhi123@gmail.com",
+      "password": "12345",
+      "id": "51ff"
     },
     {
-      "id": "2",
-      "name": "Jane Doe"
-    },
-    {
-      "id": "6207",
-      "name": "abhishek"
-    },
-    {
-      "id": "0674",
-      "name": "get"
-    },
-    {
-      "id": "b3b3",
-      "name": "apna"
-    },
-    {
-      "id": "7d86",
-      "name": "kuldeep"
-    }
-  ],
-  "posts": [
-    {
-      "id": "1",
-      "title": "Lorem Ipsum"
-    },
-    {
-      "id": "2",
-      "title": "Dolor Sit Amet"
+      "id": "8097",
+      "name": "laptop",
+      "email": "abhishek@gmail.com",
+      "password": "12345"
     }
   ]
 }

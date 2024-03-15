@@ -1,3 +1,4 @@
+
 import { Component} from '@angular/core';
 
 @Component({
@@ -9,14 +10,10 @@ import { Component} from '@angular/core';
 export class AppComponent {
   title = 'ang';
 
-  newTask = '';
-  tasks: string[] = [];
+  constructor() {}
 
-  addTask() {
-    if (this.newTask.trim() !== '') {
-      this.tasks.push(this.newTask.trim());
-      this.newTask = '';
-    }
+  ngOnInit(): void {
+    
   }
   
 }

@@ -3,28 +3,23 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { FormsModule } from '@angular/forms';
-import {MatListModule} from '@angular/material/list'
 
+import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
+    
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatButtonModule,
-    MatInputModule,
-    MatCheckboxModule,
     FormsModule,
-    MatListModule
-    
-       
+    HttpClientModule
   ],
   providers: [
     provideClientHydration(),

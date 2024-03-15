@@ -1,0 +1,32 @@
+<nav class="nav">
+    <h1>ECOM</h1>
+
+    <div class="nav-search">
+        <input type="text" placeholder="search">
+        <button>Search</button>
+    </div>
+
+    <ul>
+        <li ><a href="#">Home</a></li>
+        <li ><a href="#">Seller</a></li>
+        <li ><a href="#">Login</a></li>
+        <li ><a href="#">cart</a></li>
+    </ul>
+</nav>
+
+<div class="seller-auth">
+    <div class="signup">
+        <h1>Seller SignUp</h1>
+
+        <form #sellerSignUp="ngForm" (ngSubmit)="signup(sellerSignUp.value)" class="common-form">
+            <input class="form-input" type="text" name="name" placeholder="enter name" ngModel>
+            <input class="form-input" type="text" name="email" placeholder="Email" ngModel>
+            <input class="form-input" type="text" name="password" placeholder="password" ngModel>
+            <button class="form-button">SignUp</button>
+        </form>
+
+
+
+    </div>
+
+</div>
