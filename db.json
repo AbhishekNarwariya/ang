@@ -1,16 +1,26 @@
 {
   "seller": [
     {
-      "name": "abhishek",
-      "email": "abhi123@gmail.com",
-      "password": "12345",
-      "id": "51ff"
+      "name": "sds",
+      "id": "9b03"
     },
     {
-      "id": "8097",
+      "id": "b7e7",
+      "name": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "c5f9",
       "name": "laptop",
-      "email": "abhishek@gmail.com",
-      "password": "12345"
+      "email": "jenkins@gmail.com",
+      "password": "fgdf"
+    },
+    {
+      "id": "659d",
+      "name": "",
+      "email": "",
+      "password": ""
     }
   ]
 }

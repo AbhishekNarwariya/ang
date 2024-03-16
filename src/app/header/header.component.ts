@@ -9,8 +9,16 @@ import { SellerService } from '../seller.service';
 })
 export class HeaderComponent {
 
+  dataFromServer: any;
+
+  newName: string = '';
+
   constructor(private sellerService:SellerService){
 
+  }
+
+  ngOnInit(): void {
+    this.getDataFromServer();
   }
   signup(data:any):void{
     // console.log(data);
@@ -20,6 +28,20 @@ export class HeaderComponent {
       
     })
 
+  }
+
+  getDataFromServer(): void {
+    this.sellerService.getData().subscribe((data) => {
+      this.dataFromServer = data;
+    });
+  }
+
+  updateUserName(id: number, newName: string): void {
+    const updatedData = { name: newName }; // Assuming only 'name' needs to be updated
+    this.sellerService.updateData(id, updatedData).subscribe((result) => {
+      console.log(result); // Log the result if needed
+      this.getDataFromServer(); // Refresh data after update
+    });
   }
 
 }
